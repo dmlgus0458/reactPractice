@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Component } from 'react';
 import Button from '@mui/material/Button';
+import Modal from './components/Modal';
+import UseEffectComponent from './components/UseEffectComponent';
+import UseReducerComponent from './components/UseReducerComponent';
+import UseCallbackComponent from './components/UseCallbackComponent';
+import UseRefComponent from './components/UseRefComponent';
 
 function App() {
     let [글제목, 글제목변경] = useState(['남자코트 추천', '강남 우동맛집', '파이썬 독학']);
@@ -21,7 +25,11 @@ function App() {
                         <h4
                             onClick={() => {
                                 setTitle(i);
-                                setModal(true);
+                                if (modal === false) {
+                                    setModal(true);
+                                } else {
+                                    setModal(false);
+                                }
                             }}
                         >
                             {a}
@@ -74,18 +82,10 @@ function App() {
                 글쓰기
             </button>
             {modal == true ? <Modal titleName={글제목} titleNum={title} /> : null}
-        </div>
-    );
-}
-
-function Modal(props) {
-    return (
-        <div className="modal">
-            <div className="list">
-                <h4>{props.titleName[props.titleNum]}</h4>
-                <p>내용</p>
-                <p>내용</p>
-            </div>
+            <UseEffectComponent />
+            <UseReducerComponent />
+            <UseCallbackComponent />
+            <UseRefComponent />
         </div>
     );
 }
