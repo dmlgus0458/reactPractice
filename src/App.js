@@ -6,7 +6,9 @@ import UseEffectComponent from './components/UseEffectComponent';
 import UseReducerComponent from './components/UseReducerComponent';
 import UseCallbackComponent from './components/UseCallbackComponent';
 import UseRefComponent from './components/UseRefComponent';
-
+import SassComponent from './components/SassComponent';
+import CssModule from './components/CssModule';
+import StyledComponent from './components/StyledComponent';
 function App() {
     let [글제목, 글제목변경] = useState(['남자코트 추천', '강남 우동맛집', '파이썬 독학']);
     let [like, likechange] = useState([0, 1, 0]);
@@ -86,6 +88,9 @@ function App() {
             <UseReducerComponent />
             <UseCallbackComponent />
             <UseRefComponent />
+            <SassComponent />
+            <CssModule />
+            <StyledComponent />
         </div>
     );
 }
